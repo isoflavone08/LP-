@@ -8,6 +8,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* 画像読み込みエラー時のフォールバックスタイル */
+        img {
+            background-color: #f0f0f0;
+            min-height: 200px;
+            object-fit: cover;
+        }
+        
+        .hero {
+            background-color: #2a5298;
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+        }
+        
+        .cta-section {
+            background-color: #1a3a6e;
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+        
+        /* 画像エラー時のプレースホルダースタイル */
+        img[data-error="true"] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+        
+        img[data-error="true"]::after {
+            content: attr(alt);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,7 +68,7 @@
 
     <main>
         <!-- 01. ファーストビュー -->
-        <section class="hero" style="background-image: url('https://i.ibb.co/bF0J7XN/hero-bg.jpg');">
+        <section class="hero" style="background-image: url('https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/hero-bg.jpg'); background-color: #2a5298;">
             <div class="hero-content reveal">
                 <p class="hero-subtext">オンラインパーソナルトレーニング</p>
                 <h1 class="hero-title">Live<span>Fit</span></h1>
@@ -39,7 +78,7 @@
 
         <!-- 02. お知らせ -->
         <section class="notice">
-            <p>お知らせ：2025.7.13 ウィルベース株式会社が運営する「CureBell」様に掲載されました。</p>
+            <p>お知らせ:2025.7.13 ウィルベース株式会社が運営する「CureBell」様に掲載されました。</p>
         </section>
 
         <!-- 03. メディア掲載 -->
@@ -49,10 +88,22 @@
                 <h2>に掲載されました</h2>
             </div>
             <div class="media-grid">
-                <img src="https://i.ibb.co/L5t4pQJ/media-1.png" alt="雑誌掲載 Tarzan">
-                <img src="https://i.ibb.co/3WqP7t7/media-2.png" alt="雑誌掲載 CREA">
-                <img src="https://i.ibb.co/tKkPgg3/media-3.png" alt="雑誌掲載 anan">
-                <img src="https://i.ibb.co/zX95tT8/media-4.png" alt="雑誌掲載 CLASSY">
+                <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/media-1.png" 
+                     alt="雑誌掲載 Tarzan"
+                     onerror="this.setAttribute('data-error', 'true'); this.style.minHeight='150px';"
+                     loading="lazy">
+                <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/media-2.png" 
+                     alt="雑誌掲載 CREA"
+                     onerror="this.setAttribute('data-error', 'true'); this.style.minHeight='150px';"
+                     loading="lazy">
+                <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/media-3.png" 
+                     alt="雑誌掲載 anan"
+                     onerror="this.setAttribute('data-error', 'true'); this.style.minHeight='150px';"
+                     loading="lazy">
+                <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/media-4.png" 
+                     alt="雑誌掲載 CLASSY"
+                     onerror="this.setAttribute('data-error', 'true'); this.style.minHeight='150px';"
+                     loading="lazy">
             </div>
         </section>
         
@@ -65,7 +116,11 @@
             <div class="text-content">
                 <p>LiveFitは、スマホ・PCがあれば、いつでもどこでもプロのトレーナーから指導を受けられます。<br>レッスン形式や複数人のビデオチャット指導ではなく完全にマンツーマンで50分のパーソナルを受けることができます。<br>そのため、お客様のご自宅の環境やお身体に最も効果のある運動をトレーナーから指導してもらうことができます。</p>
             </div>
-            <img src="https://i.ibb.co/gZ7s66T/service-img.jpg" alt="オンラインでトレーニングする女性" class="content-image">
+            <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/service-img.jpg" 
+                 alt="オンラインでトレーニングする女性" 
+                 class="content-image"
+                 onerror="this.setAttribute('data-error', 'true');"
+                 loading="lazy">
         </section>
 
         <!-- 05. トレーナーの専門性 -->
@@ -76,7 +131,11 @@
             <div class="text-content">
                 <p>国家資格を持っているため、解剖学・生理学・運動学など専門的な知識と技術があります。<br>オンラインだからこそ、より専門的な指導がなければ成果が出ません。<br>オンライン上で「動き」や「姿勢」のチェックを行うため、より効果の高い運動指導を受けることができます。</p>
             </div>
-            <img src="https://i.ibb.co/2v2LzqJ/trainer-stretch.jpg" alt="トレーナーによるストレッチ指導" class="content-image">
+            <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/trainer-stretch.jpg" 
+                 alt="トレーナーによるストレッチ指導" 
+                 class="content-image"
+                 onerror="this.setAttribute('data-error', 'true');"
+                 loading="lazy">
             <a href="#" class="btn">トレーナー紹介 →</a>
         </section>
         
@@ -88,7 +147,11 @@
             <div class="text-content">
                 <p>ジムに通うよりもお得！<br>費用はなんとパーソナルトレーニングの1/2<br>場所代や器具代がかからないため、ジムと比べてリーズナブルにダイエットができます。</p>
             </div>
-            <img src="https://i.ibb.co/jLD3Y1q/pricing-img.jpg" alt="母親と子供の笑顔" class="content-image">
+            <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/pricing-img.jpg" 
+                 alt="母親と子供の笑顔" 
+                 class="content-image"
+                 onerror="this.setAttribute('data-error', 'true');"
+                 loading="lazy">
             <a href="#" class="btn">料金プラン →</a>
         </section>
 
@@ -101,9 +164,18 @@
                 <p>「動き」や「姿勢」で身体のチェック。<br>最新スマホアプリで食事を分析します。<br>さらに、専門的なトレーナーがひとりひとりに合わせた個別プランを用意することができます。</p>
             </div>
             <div class="plan-images">
-                <img src="https://i.ibb.co/5cQf1S0/individual-1.jpg" alt="腹筋運動をする女性">
-                <img src="https://i.ibb.co/k5zN6N0/individual-2.png" alt="腰痛改善ビフォーアフター">
-                <img src="https://i.ibb.co/GcPn0n2/individual-3.png" alt="姿勢改善ビフォーアフター">
+                <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/individual-1.jpg" 
+                     alt="腹筋運動をする女性"
+                     onerror="this.setAttribute('data-error', 'true');"
+                     loading="lazy">
+                <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/individual-2.png" 
+                     alt="腰痛改善ビフォーアフター"
+                     onerror="this.setAttribute('data-error', 'true');"
+                     loading="lazy">
+                <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/individual-3.png" 
+                     alt="姿勢改善ビフォーアフター"
+                     onerror="this.setAttribute('data-error', 'true');"
+                     loading="lazy">
             </div>
             <a href="#" class="btn">個別プラン →</a>
         </section>
@@ -116,7 +188,11 @@
             <div class="text-content">
                 <p>毎日の食事もマンツーマン指導。<br>3食しっかり食べながらダイエットをサポートしてもらえます。</p>
             </div>
-            <img src="https://i.ibb.co/q0Qx5yQ/meal-img.jpg" alt="サラダを食べる女性" class="content-image">
+            <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/meal-img.jpg" 
+                 alt="サラダを食べる女性" 
+                 class="content-image"
+                 onerror="this.setAttribute('data-error', 'true');"
+                 loading="lazy">
             <a href="#" class="btn">食事指導 →</a>
         </section>
         
@@ -127,13 +203,17 @@
                     <h2>食事指導サンプルPDF<br>無料ダウンロード</h2>
                 </div>
                 <p class="text-content">入会特典でお渡ししている「食事指導PDF」の中身を一部ご覧いただくことができます。</p>
-                <img src="https://i.ibb.co/pwnLgXz/pdf-samples.png" alt="食事指導PDFサンプル" class="content-image">
+                <img src="https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/pdf-samples.png" 
+                     alt="食事指導PDFサンプル" 
+                     class="content-image"
+                     onerror="this.setAttribute('data-error', 'true');"
+                     loading="lazy">
                 <a href="#" class="btn btn-download">サンプルをダウンロードする <span class="arrow-down">↓</span></a>
             </div>
         </section>
         
         <!-- 10. 無料体験CTA -->
-        <section id="cta" class="cta-section" style="background-image: url('https://i.ibb.co/3s8p80N/cta-bg.jpg');">
+        <section id="cta" class="cta-section" style="background-image: url('https://raw.githubusercontent.com/google-gemini-lp/livefit-assets/main/cta-bg.jpg'); background-color: #1a3a6e;">
             <div class="cta-content reveal">
                  <div class="section-title">
                     <h2 class="white-text">無料体験の予約・お問合せ</h2>
