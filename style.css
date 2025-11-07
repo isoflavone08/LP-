@@ -284,12 +284,10 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    margin-top: 30px; /* 上の要素との余白を調整 */
     
     /* コンテナ自体の最大幅を制限して、中の画像が大きくなりすぎないようにする */
-    max-width: 500px; 
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 500px;
+    margin: 30px auto 0; /* 上に余白、左右中央揃え */
 }
 /* ビフォーアフターの各画像のデザインを調整 */
 .before-after-grid img {
